@@ -10,3 +10,4 @@ app/[Cc]onfig/database.php
 *.DS_Store
 *.swp
 *.out
+test_app/
