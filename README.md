@@ -1,6 +1,6 @@
 cakestrap
 =========
-
+Work in progress...
 CakePHP + Bootstrap + ect...
 
 Frameworks composed together to make webdevelopment even more rapid.
