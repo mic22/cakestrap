@@ -5,3 +5,8 @@ app/tmp/*
 app/[Cc]onfig/core.php
 app/[Cc]onfig/database.php
 !empty
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
