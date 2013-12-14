@@ -17,14 +17,17 @@
  */
 
 ?>
-<h2><?php echo __d('cake_dev', 'Missing Method in %s', h($controller)); ?></h2> <p class="error">
+<div class="page-header">
+	<h3><?php echo __d('cake_dev', 'Missing Method in %s', h($controller)); ?></h3>
+</div>
+<div class="alert alert-danger">
 	<strong><?php echo __d('cake_dev', 'Error'); ?>: </strong>
 	<?php echo __d('cake_dev', 'The action %1$s is not defined in controller %2$s', '<em>' . h($action) . '</em>', '<em>' . h($controller) . '</em>'); ?>
-</p>
-<p class="error">
+</div>
+<div class="alert alert-danger">
 	<strong><?php echo __d('cake_dev', 'Error'); ?>: </strong>
 	<?php echo __d('cake_dev', 'Create %1$s%2$s in file: %3$s.', '<em>' . h($controller) . '::</em>', '<em>' . h($action) . '()</em>', APP_DIR . DS . 'Controller' . DS . h($controller) . '.php'); ?>
-</p>
+</div>
 <pre>
 &lt;?php
 class <?php echo h($controller); ?> extends AppController {
@@ -36,8 +39,8 @@ class <?php echo h($controller); ?> extends AppController {
 </strong>
 }
 </pre>
-<p class="notice">
+<div class="alert alert-info">
 	<strong><?php echo __d('cake_dev', 'Notice'); ?>: </strong>
 	<?php echo __d('cake_dev', 'If you want to customize this error message, create %s', APP_DIR . DS . 'View' . DS . 'Errors' . DS . 'missing_action.ctp'); ?>
-</p>
+</div>
 <?php echo $this->element('exception_stack_trace'); ?>

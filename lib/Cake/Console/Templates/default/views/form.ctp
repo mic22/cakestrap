@@ -16,10 +16,22 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 ?>
-<div class="<?php echo $pluralVar; ?> form">
-<?php echo "<?php echo \$this->Form->create('{$modelClass}'); ?>\n"; ?>
-	<fieldset>
-		<legend><?php printf("<?php echo __('%s %s'); ?>", Inflector::humanize($action), $singularHumanName); ?></legend>
+<div class="col-md-9 <?php echo $pluralVar; ?> form">
+	<div class="page-header">
+		<h3><?php printf("<?php echo __('%s %s'); ?>", Inflector::humanize($action), $singularHumanName); ?></h3>
+	</div>
+<?php echo "<?php echo \$this->Form->create('{$modelClass}', array(
+'class' => 'form-horizontal', 
+'role' => 'form',
+'inputDefaults' => array(
+    'format' => array('before', 'label', 'between', 'input', 'error', 'after'),
+    'div' => array('class' => 'form-group'),
+    'class' => array('form-control'),
+    'label' => array('class' => 'col-lg-2 control-label'),
+    'between' => '<div class=\"col-lg-3\">',
+    'after' => '</div>',
+    'error' => array('attributes' => array('wrap' => 'span', 'class' => 'help-inline')),
+))); ?>\n"; ?>
 <?php
 		echo "\t<?php\n";
 		foreach ($fields as $field) {
@@ -36,14 +48,23 @@
 		}
 		echo "\t?>\n";
 ?>
-	</fieldset>
 <?php
-	echo "<?php echo \$this->Form->end(__('Submit')); ?>\n";
+	echo "<?php echo \$this->Form->end(array(
+    'label' => __('Submit'),
+    'class' => 'btn btn-md btn-primary',
+    'div' => array(
+        'class' => 'control-group',
+        ),
+    'before' => '<div class=\"controls\">',
+    'after' => '</div>'
+));?>";
 ?>
 </div>
-<div class="actions">
-	<h3><?php echo "<?php echo __('Actions'); ?>"; ?></h3>
-	<ul>
+<div class="col-md-3 actions">
+	<div class="page-header">
+		<h3><?php echo "<?php echo __('Actions'); ?>"; ?></h3>
+	</div>
+	<ul class="nav nav-pills nav-stacked">
 
 <?php if (strpos($action, 'add') === false): ?>
 		<li><?php echo "<?php echo \$this->Form->postLink(__('Delete'), array('action' => 'delete', \$this->Form->value('{$modelClass}.{$primaryKey}')), null, __('Are you sure you want to delete # %s?', \$this->Form->value('{$modelClass}.{$primaryKey}'))); ?>"; ?></li>

@@ -16,8 +16,10 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 ?>
-<h2><?php echo __d('cake_dev', 'Missing Database Connection'); ?></h2>
-<p class="error">
+<div class="page-header">
+	<h3><?php echo __d('cake_dev', 'Missing Database Connection'); ?></h3>
+</div>
+<div class="alert alert-danger">
 	<strong><?php echo __d('cake_dev', 'Error'); ?>: </strong>
 	<?php echo __d('cake_dev', 'A Database connection using "%s" was missing or unable to connect.', h($class)); ?>
 	<br />
@@ -26,17 +28,17 @@
 		echo __d('cake_dev', 'The database server returned this error: %s', h($message));
 	endif;
 	?>
-</p>
+</div>
 <?php if (!$enabled) : ?>
-<p class="error">
+<div class="alert alert-danger">
 	<strong><?php echo __d('cake_dev', 'Error'); ?>: </strong>
 	<?php echo __d('cake_dev', '%s driver is NOT enabled', h($class)); ?>
-</p>
+</div>
 <?php endif; ?>
-<p class="notice">
+<div class="alert alert-info">
 	<strong><?php echo __d('cake_dev', 'Notice'); ?>: </strong>
 	<?php echo __d('cake_dev', 'If you want to customize this error message, create %s', APP_DIR . DS . 'View' . DS . 'Errors' . DS . basename(__FILE__)); ?>
-</p>
+</div>
 
 <?php
 echo $this->element('exception_stack_trace');

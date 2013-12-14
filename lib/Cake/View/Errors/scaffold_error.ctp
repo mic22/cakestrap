@@ -16,15 +16,17 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 ?>
-<h2><?php echo __d('cake_dev', 'Scaffold Error'); ?></h2>
-<p class="error">
+<div class="page-header">
+	<h3><?php echo __d('cake_dev', 'Scaffold Error'); ?></h3>
+</div>
+<div class="alert alert-danger">
 	<strong><?php echo __d('cake_dev', 'Error'); ?>: </strong>
 	<?php echo __d('cake_dev', 'Method _scaffoldError in was not found in the controller'); ?>
-</p>
-<p class="notice">
+</div>
+<div class="alert alert-danger">
 	<strong><?php echo __d('cake_dev', 'Notice'); ?>: </strong>
 	<?php echo __d('cake_dev', 'If you want to customize this error message, create %s', APP_DIR . DS . 'View' . DS . 'Errors' . DS . 'scaffold_error.ctp'); ?>
-</p>
+</div>
 <pre>
 &lt;?php
 function _scaffoldError() {<br />

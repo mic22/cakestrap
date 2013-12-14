@@ -1,3 +1,4 @@
+
 <?php
 /**
  *
@@ -16,30 +17,32 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 ?>
-<h2><?php echo __d('cake_dev', 'Missing Plugin'); ?></h2>
-<p class="error">
+<div class="page-header">
+	<h3><?php echo __d('cake_dev', 'Missing Plugin'); ?></h3>
+</div>
+<div class="alert alert-danger">
 	<strong><?php echo __d('cake_dev', 'Error'); ?>: </strong>
 	<?php echo __d('cake_dev', 'The application is trying to load a file from the %s plugin', '<em>' . h($plugin) . '</em>'); ?>
-</p>
-<p class="error">
+</div>
+<div class="aler alert-danger">
 	<strong><?php echo __d('cake_dev', 'Error'); ?>: </strong>
 	<?php echo __d('cake_dev', 'Make sure your plugin %s is in the %s directory and was loaded', $plugin, APP_DIR . DS . 'Plugin'); ?>
-</p>
+</div>
 <pre>
 &lt;?php
 CakePlugin::load('<?php echo h($plugin); ?>');
 
 </pre>
-<p class="notice">
+<div class="alert alert-info">
 	<strong><?php echo __d('cake_dev', 'Loading all plugins'); ?>: </strong>
 	<?php echo __d('cake_dev', 'If you wish to load all plugins at once, use the following line in your %s file', APP_DIR . DS . 'Config' . DS . 'bootstrap.php'); ?>
-</p>
+</div>
 <pre>
 CakePlugin::loadAll();
 </pre>
-<p class="notice">
+<div class="alert alert-info">
 	<strong><?php echo __d('cake_dev', 'Notice'); ?>: </strong>
 	<?php echo __d('cake_dev', 'If you want to customize this error message, create %s', APP_DIR . DS . 'View' . DS . 'Errors' . DS . 'missing_plugin.ctp'); ?>
-</p>
+</div>
 
 <?php echo $this->element('exception_stack_trace'); ?>

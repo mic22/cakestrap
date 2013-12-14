@@ -17,8 +17,10 @@
  */
 
 ?>
-<h2><?php echo __d('cake_dev', 'Fatal Error'); ?></h2>
-<p class="error">
+<div class="page-header">
+	<h3><?php echo __d('cake_dev', 'Fatal Error'); ?></h3>
+</div>
+<div class="alert alert-danger">
 	<strong><?php echo __d('cake_dev', 'Error'); ?>: </strong>
 	<?php echo h($error->getMessage()); ?>
 	<br>
@@ -29,8 +31,8 @@
 
 	<strong><?php echo __d('cake_dev', 'Line'); ?>: </strong>
 	<?php echo h($error->getLine()); ?>
-</p>
-<p class="notice">
+</div>
+<div class="alert alert-info">
 	<strong><?php echo __d('cake_dev', 'Notice'); ?>: </strong>
 	<?php echo __d('cake_dev', 'If you want to customize this error message, create %s', APP_DIR . DS . 'View' . DS . 'Errors' . DS . 'fatal_error.ctp'); ?>
-</p>
+</div>

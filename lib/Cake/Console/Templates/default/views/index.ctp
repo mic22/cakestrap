@@ -61,22 +61,15 @@
 		?>
 		</tbody>
 	</table>
-	<p>
-	<?php echo "<?php
-	echo \$this->Paginator->counter(array(
-	'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
-	));
-	?>"; ?>
-	</p>
 
-	<div class="paging">
-	<?php
-		echo "<?php\n";
-		echo "\t\techo \$this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));\n";
-		echo "\t\techo \$this->Paginator->numbers(array('separator' => ''));\n";
-		echo "\t\techo \$this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));\n";
-		echo "\t?>\n";
-	?>
+	<div class="pagination pagination-large">
+    <?php
+	    echo "<?php\n";	
+        echo "\t\techo \$this->Paginator->prev(__('prev'), array('tag' => 'li'), null, array('tag' => 'li','class' => 'disabled','disabledTag' => 'a'));\n";
+        echo "\t\techo \$this->Paginator->numbers(array('separator' => '','currentTag' => 'a', 'currentClass' => 'active','tag' => 'li','first' => 1));\n";
+        echo "\t\techo \$this->Paginator->next(__('next'), array('tag' => 'li','currentClass' => 'disabled'), null, array('tag' => 'li','class' => 'disabled','disabledTag' => 'a'));\n";
+        echo "\t?>\n";
+    ?>
 	</div>
 </div>
 <div class="col-md-3 actions">

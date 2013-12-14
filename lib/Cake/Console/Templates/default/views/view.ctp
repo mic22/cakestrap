@@ -16,8 +16,10 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 ?>
-<div class="<?php echo $pluralVar; ?> view">
-<h2><?php echo "<?php echo __('{$singularHumanName}'); ?>"; ?></h2>
+<div class="col-md-9 <?php echo $pluralVar; ?> view">
+	<div class="page-header">
+		<h3><?php echo "<?php echo __('{$pluralHumanName}'); ?>"; ?></h3>
+	</div>
 	<dl>
 <?php
 foreach ($fields as $field) {
@@ -40,9 +42,11 @@ foreach ($fields as $field) {
 ?>
 	</dl>
 </div>
-<div class="actions">
-	<h3><?php echo "<?php echo __('Actions'); ?>"; ?></h3>
-	<ul>
+<div class="col-md-3 actions">
+	<div class="page-header">
+		<h3><?php echo "<?php echo __('Actions'); ?>"; ?></h3>
+	</div>
+	<ul class="nav nav-pills nav-stacked">
 <?php
 	echo "\t\t<li><?php echo \$this->Html->link(__('Edit " . $singularHumanName ."'), array('action' => 'edit', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?> </li>\n";
 	echo "\t\t<li><?php echo \$this->Form->postLink(__('Delete " . $singularHumanName . "'), array('action' => 'delete', \${$singularVar}['{$modelClass}']['{$primaryKey}']), null, __('Are you sure you want to delete # %s?', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?> </li>\n";
