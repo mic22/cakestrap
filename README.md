@@ -1,17 +1,16 @@
-cakestrap
+db2
 =========
-Work in progress...
-CakePHP + Bootstrap + ect...
+## Project for Bazy danych II labs
 
-Frameworks composed together to make webdevelopment even more rapid.
+There's no any ORM as decided on assigment.
+I use simple methods to build queries dynamicly.
+* find([mixed $where])
+* listing([mixed $where, string $displayField])
+* read(int $id)
+* save(array $data)
+* delete(int $id)
 
-## Versions
-* CakePHP 2.4.3
-* Bootstrap 3.0.3
-* jQuery 2.0.3
+And query method do retrive any data
+* query(string $sql)
 
-### About
-This project is meant to be as simple as it can be for the developer. The goal is to make simple but powerfull, bootstrap and jquery powered, web apps based on beloved cake php framework.
-
-### Usage
-Just bake new project on the cake console.
+Database connection, sessions, routing ect are managed by CakePHP framework
